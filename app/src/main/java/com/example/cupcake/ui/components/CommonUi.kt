@@ -13,15 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.cupcake.ui.theme
+package com.example.cupcake.ui.components
 
-import androidx.compose.ui.graphics.Color
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.example.cupcake.R
 
-val Pink400 = Color(0xFFEC407A)
-val Pink600 = Color(0xFFD81B60)
-val Pink950 = Color(0xFFB31650)
-val Purple400 = Color(0xFFAB47BC)
-val Purple700 = Color(0xFF7B1FA2)
-val Black = Color(0xFF000000)
-val White = Color(0xFFFFFFFF)
-
+/**
+ * Composable that displays formatted [price] that will be formatted and displayed on screen
+ */
+@Composable
+fun FormattedPriceLabel(subtotal: String, modifier: Modifier = Modifier) {
+    Text(
+        text = stringResource(R.string.subtotal_price, subtotal),
+        modifier = modifier
+    )
+}

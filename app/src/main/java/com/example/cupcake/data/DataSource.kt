@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.cupcake.ui.theme
+package com.example.cupcake.data
 
-import androidx.compose.ui.graphics.Color
+import com.example.cupcake.R
 
-val Pink400 = Color(0xFFEC407A)
-val Pink600 = Color(0xFFD81B60)
-val Pink950 = Color(0xFFB31650)
-val Purple400 = Color(0xFFAB47BC)
-val Purple700 = Color(0xFF7B1FA2)
-val Black = Color(0xFF000000)
-val White = Color(0xFFFFFFFF)
+object DataSource {
+    val flavors = listOf(
+        R.string.vanilla,
+        R.string.chocolate,
+        R.string.red_velvet,
+        R.string.salted_caramel,
+        R.string.coffee
+    )
 
+    val quantityOptions = listOf(
+        Pair(R.string.one_cupcake, 1),
+        Pair(R.string.six_cupcakes, 6),
+        Pair(R.string.twelve_cupcakes, 12)
+    )
+}

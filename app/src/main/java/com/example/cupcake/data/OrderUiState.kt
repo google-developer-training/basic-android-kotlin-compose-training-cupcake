@@ -13,23 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.cupcake
-
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import com.example.cupcake.ui.theme.CupcakeTheme
+package com.example.cupcake.data
 
 /**
- * Activity for cupcake order flow.
+ * Data class that represents the current UI state in terms of [quantity], [flavor],
+ * [dateOptions], selected pickup [date] and [price]
  */
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            CupcakeTheme {
-                CupcakeApp()
-            }
-        }
-    }
-}
+data class OrderUiState(
+    /** Selected cupcake quantity (1, 6, 12) */
+    val quantity: Int = 0,
+    /** Flavor of the cupcakes in the order (such as "Chocolate", "Vanilla", etc..) */
+    val flavor: String = "",
+    /** Selected date for pickup (such as "Jan 1") */
+    val date: String = "",
+    /** Total price for the order */
+    val price: String = "",
+    /** Available pickup dates for the order*/
+    val pickupOptions: List<String> = listOf()
+)
