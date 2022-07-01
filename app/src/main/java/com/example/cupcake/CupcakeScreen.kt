@@ -41,10 +41,10 @@ import androidx.navigation.compose.rememberNavController
 import com.example.cupcake.data.DataSource.flavors
 import com.example.cupcake.data.DataSource.quantityOptions
 import com.example.cupcake.data.OrderUiState
-import com.example.cupcake.ui.StartOrderScreen
 import com.example.cupcake.ui.OrderSummaryScreen
 import com.example.cupcake.ui.OrderViewModel
 import com.example.cupcake.ui.SelectOptionScreen
+import com.example.cupcake.ui.StartOrderScreen
 
 /**
  * enum values that represent the screens in the app
@@ -83,9 +83,11 @@ fun CupcakeAppBar(
 }
 
 @Composable
-fun CupcakeApp(modifier: Modifier = Modifier, viewModel: OrderViewModel = viewModel()){
-    //Create NavController
-    val navController = rememberNavController()
+fun CupcakeApp(
+    modifier: Modifier = Modifier,
+    viewModel: OrderViewModel = viewModel(),
+    navController: NavHostController = rememberNavController()
+) {
     // Get current back stack entry
     val backStackEntry by navController.currentBackStackEntryAsState()
     // Get the name of the current screen
@@ -171,7 +173,7 @@ private fun cancelOrderAndNavigateToStart(
 /**
  * Creates an intent to share order details
  */
-private fun shareOrder(context: Context, subject: String, summary: String){
+private fun shareOrder(context: Context, subject: String, summary: String) {
     // Create an ACTION_SEND implicit intent with order details in the intent extras
     val intent = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
