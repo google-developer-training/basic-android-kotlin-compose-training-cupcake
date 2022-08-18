@@ -1,7 +1,7 @@
 ---
-name: 'Android Basics: Cupcake app'
-about: Describe this issue template's purpose here.
-title: 'Android Basics: Cupcake app'
+name: Navigate between screens with Compose issue template
+about: Issue template for Navigate between screens with Compose
+title: 'Navigate between screens with Compose: Android Basics with Compose'
 labels: ''
 assignees: ''
 
