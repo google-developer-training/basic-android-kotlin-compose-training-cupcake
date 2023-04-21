@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2022 The Android Open Source Project
+ * Copyright (C) 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,13 +15,15 @@
  */
 package com.example.cupcake
 
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -40,7 +42,10 @@ fun CupcakeAppBar(
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
-        title = { Text(stringResource(id = R.string.app_name)) },
+        title = { Text(stringResource(R.string.app_name)) },
+        colors = TopAppBarDefaults.mediumTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer
+        ),
         modifier = modifier,
         navigationIcon = {
             if (canNavigateBack) {
@@ -56,9 +61,9 @@ fun CupcakeAppBar(
 }
 
 @Composable
-fun CupcakeApp(modifier: Modifier = Modifier, viewModel: OrderViewModel = viewModel()){
-    // TODO: Create NavController
-
+fun CupcakeApp(
+    viewModel: OrderViewModel = viewModel()
+) {
     // TODO: Get current back stack entry
 
     // TODO: Get the name of the current screen
@@ -74,6 +79,6 @@ fun CupcakeApp(modifier: Modifier = Modifier, viewModel: OrderViewModel = viewMo
         val uiState by viewModel.uiState.collectAsState()
 
         // TODO: add NavHost
+
     }
 }
-
