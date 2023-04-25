@@ -51,9 +51,9 @@ fun SelectOptionScreen(
     subtotal: String,
     options: List<String>,
     onSelectionChanged: (String) -> Unit = {},
-    modifier: Modifier = Modifier
     // TODO: add onCancelButtonClicked
     // TODO: add onNextButtonClicked
+    modifier: Modifier = Modifier
 ){
     var selectedValue by rememberSaveable { mutableStateOf("") }
 
