@@ -148,6 +148,6 @@ class CupcakeOrderScreenTest {
                 R.string.subtotal_price,
                 fakeOrderUiState.price
             )
-        )
+        ).assertIsDisplayed()
     }
 }
