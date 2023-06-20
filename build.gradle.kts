@@ -13,19 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    extra.apply {
+        set("lifecycle_version", "2.6.1")
     }
 }
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
+plugins {
+    id("com.android.application") version "8.0.2" apply false
+    id("com.android.library") version "8.0.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.8.21" apply false
 }
-rootProject.name = "Cupcake"
-include ':app'
