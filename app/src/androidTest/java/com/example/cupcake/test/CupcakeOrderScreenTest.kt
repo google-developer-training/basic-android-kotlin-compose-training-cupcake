@@ -76,25 +76,25 @@ class CupcakeOrderScreenTest {
     @Test
     fun selectOptionScreen_verifyContent() {
         // Given list of options
-        val flavours = listOf("Vanilla", "Chocolate", "Hazelnut", "Cookie", "Mango")
-        // And sub total
-        val subTotal = "$100"
+        val flavors = listOf("Vanilla", "Chocolate", "Hazelnut", "Cookie", "Mango")
+        // And subtotal
+        val subtotal = "$100"
 
         // When SelectOptionScreen is loaded
         composeTestRule.setContent {
-            SelectOptionScreen(subtotal = subTotal, options = flavours)
+            SelectOptionScreen(subtotal = subtotal, options = flavors)
         }
 
         // Then all the options are displayed on the screen.
-        flavours.forEach { flavour ->
-            composeTestRule.onNodeWithText(flavour).assertIsDisplayed()
+        flavors.forEach { flavor ->
+            composeTestRule.onNodeWithText(flavor).assertIsDisplayed()
         }
 
         // And then the subtotal is displayed correctly.
         composeTestRule.onNodeWithText(
             composeTestRule.activity.getString(
                 R.string.subtotal_price,
-                subTotal
+                subtotal
             )
         ).assertIsDisplayed()
 
@@ -148,6 +148,6 @@ class CupcakeOrderScreenTest {
                 R.string.subtotal_price,
                 fakeOrderUiState.price
             )
-        )
+        ).assertIsDisplayed()
     }
 }
