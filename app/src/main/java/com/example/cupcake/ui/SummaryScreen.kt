@@ -38,6 +38,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.cupcake.R
 import com.example.cupcake.data.OrderUiState
 import com.example.cupcake.ui.components.FormattedPriceLabel
+import com.example.cupcake.ui.theme.CupcakeTheme
 
 /**
  * This composable expects [orderUiState] that represents the order state, [onCancelButtonClicked]
@@ -50,7 +51,7 @@ fun OrderSummaryScreen(
     onCancelButtonClicked: () -> Unit,
     onSendButtonClicked: (String, String) -> Unit,
     modifier: Modifier = Modifier
-){
+) {
     val resources = LocalContext.current.resources
 
     val numberOfCupcakes = resources.getQuantityString(
@@ -97,9 +98,7 @@ fun OrderSummaryScreen(
             )
         }
         Row(
-            modifier = Modifier
-                .weight(1f, false)
-                .padding(dimensionResource(R.dimen.padding_medium))
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
         ) {
             Column(
                 verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
@@ -123,11 +122,13 @@ fun OrderSummaryScreen(
 
 @Preview
 @Composable
-fun OrderSummaryPreview(){
-    OrderSummaryScreen(
-        orderUiState = OrderUiState(0, "Test", "Test", "$300.00"),
-        onSendButtonClicked = { subject: String, summary: String -> },
-        onCancelButtonClicked = {},
-        modifier = Modifier.fillMaxHeight()
-    )
+fun OrderSummaryPreview() {
+    CupcakeTheme {
+        OrderSummaryScreen(
+            orderUiState = OrderUiState(0, "Test", "Test", "$300.00"),
+            onSendButtonClicked = { subject: String, summary: String -> },
+            onCancelButtonClicked = {},
+            modifier = Modifier.fillMaxHeight()
+        )
+    }
 }
