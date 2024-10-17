@@ -23,7 +23,8 @@ object DataSource {
         R.string.chocolate,
         R.string.red_velvet,
         R.string.salted_caramel,
-        R.string.coffee
+        R.string.coffee,
+        R.string.funfetti
     )
 
     val quantityOptions = listOf(
