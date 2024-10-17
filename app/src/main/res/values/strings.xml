@@ -19,12 +19,14 @@
     <string name="one_cupcake">One Cupcake</string>
     <string name="six_cupcakes">Six Cupcakes</string>
     <string name="twelve_cupcakes">Twelve Cupcakes</string>
+    <string name="twenty_four_cupcakes">Twenty Four Cupcakes</string>
     <string name="choose_flavor">Choose Flavor</string>
     <string name="vanilla">Vanilla</string>
     <string name="chocolate">Chocolate</string>
     <string name="red_velvet">Red Velvet</string>
     <string name="salted_caramel">Salted Caramel</string>
     <string name="coffee">Coffee</string>
+    <string name="funfetti">Funfetti</string>
     <string name="special_flavor">Special Flavor</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
