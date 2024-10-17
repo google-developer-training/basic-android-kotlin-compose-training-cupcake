@@ -44,6 +44,7 @@
     <string name="google_pay">Google Pay</string>
     <string name="paypal">Paypal</string>
     <string name="credit_card">Credit Card</string>
+    <string name="payment_type">Payment Type</string>
     <string name="card_name">Name on Card</string>
     <string name="card_number">Card Number</string>
     <string name="expiration_date">Expiration Date</string>

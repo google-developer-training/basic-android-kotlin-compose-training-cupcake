@@ -59,7 +59,8 @@ enum class CupcakeScreen(@StringRes val title: Int) {
     Start(title = R.string.app_name),
     Flavor(title = R.string.choose_flavor),
     Pickup(title = R.string.choose_pickup_date),
-    Summary(title = R.string.order_summary)
+    Summary(title = R.string.order_summary),
+    PaymentType(title = R.string.payment_type)
 
 }
 
@@ -161,7 +162,7 @@ fun CupcakeApp(
                 )
             }
             composable(route = CupcakeScreen.Summary.name) {
-                val context = LocalContext.current
+                //val context = LocalContext.current
                 OrderSummaryScreen(
                     orderUiState = uiState,
                     onCancelButtonClicked = {
@@ -170,7 +171,20 @@ fun CupcakeApp(
 //                    onSendButtonClicked = { subject: String, summary: String ->
 //                        shareOrder(context, subject = subject, summary = summary)
 //                    },
-                    onNextButtonClicked = { navController.navigate(CupcakeScreen.Pickup.name) }, //FIXME: Replace with new screen
+                    onNextButtonClicked = { navController.navigate(CupcakeScreen.PaymentType.name) }, //FIXME: Replace with Payment Type Screen
+                    modifier = Modifier.fillMaxHeight()
+                )
+            }
+            composable(route = CupcakeScreen.PaymentType.name) {
+                val context = LocalContext.current
+                SelectOptionScreen(
+                    subtotal = uiState.price,
+                    onNextButtonClicked = { navController.navigate(CupcakeScreen.Summary.name) },//FIXME: Replace with Payment Details Screen
+                    onCancelButtonClicked = {
+                        cancelOrderAndNavigateToStart(viewModel, navController)
+                    },
+                    options = DataSource.paymentTypes.map { id -> context.resources.getString(id) },
+                    onSelectionChanged = { viewModel.setDate(it) },
                     modifier = Modifier.fillMaxHeight()
                 )
             }

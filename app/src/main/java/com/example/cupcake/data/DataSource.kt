@@ -13,6 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/*
+* Edited by Angeline Dequit for CECS 453
+* 10.17.2024
+* */
 package com.example.cupcake.data
 
 import com.example.cupcake.R
@@ -30,5 +35,12 @@ object DataSource {
         Pair(R.string.one_cupcake, 1),
         Pair(R.string.six_cupcakes, 6),
         Pair(R.string.twelve_cupcakes, 12)
+    )
+
+    val paymentTypes = listOf(
+        R.string.credit_card,
+        R.string.paypal,
+        R.string.apple_pay,
+        R.string.google_pay
     )
 }
