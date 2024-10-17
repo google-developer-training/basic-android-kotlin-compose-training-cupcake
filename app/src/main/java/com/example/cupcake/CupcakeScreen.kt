@@ -60,6 +60,7 @@ enum class CupcakeScreen(@StringRes val title: Int) {
     Flavor(title = R.string.choose_flavor),
     Pickup(title = R.string.choose_pickup_date),
     Summary(title = R.string.order_summary)
+
 }
 
 /**
@@ -166,9 +167,10 @@ fun CupcakeApp(
                     onCancelButtonClicked = {
                         cancelOrderAndNavigateToStart(viewModel, navController)
                     },
-                    onSendButtonClicked = { subject: String, summary: String ->
-                        shareOrder(context, subject = subject, summary = summary)
-                    },
+//                    onSendButtonClicked = { subject: String, summary: String ->
+//                        shareOrder(context, subject = subject, summary = summary)
+//                    },
+                    onNextButtonClicked = { navController.navigate(CupcakeScreen.Pickup.name) }, //FIXME: Replace with new screen
                     modifier = Modifier.fillMaxHeight()
                 )
             }
