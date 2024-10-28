@@ -23,4 +23,5 @@ Getting Started
 
 Flow Diagram
 ---------------
-![cupcake app diagram](https://github.com/user-attachments/assets/a0b4a3db-90a0-49b0-874b-f1103d7e9a2c)
+![cupcake app diagram (1)](https://github.com/user-attachments/assets/62f0a0aa-5497-4603-9f52-64cc759a7e01)
+
