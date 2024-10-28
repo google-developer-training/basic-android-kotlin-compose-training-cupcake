@@ -19,3 +19,8 @@ Getting Started
 2. Download the sample.
 3. Import the sample into Android Studio.
 4. Build and run the sample.
+
+
+Flow Diagram
+---------------
+![cupcake app diagram](https://github.com/user-attachments/assets/a0b4a3db-90a0-49b0-874b-f1103d7e9a2c)
