@@ -141,6 +141,13 @@ class CupcakeOrderScreenTest {
         }
 
         // Then the UI is updated correctly.
+        composeTestRule.onNodeWithText(
+            composeTestRule.activity.resources.getQuantityString(
+                R.plurals.cupcakes, 
+                fakeOrder.quantity, 
+                fakeOrder.quantity
+            )
+        ).assertIsDisplayed()
         composeTestRule.onNodeWithText(fakeOrderUiState.flavor).assertIsDisplayed()
         composeTestRule.onNodeWithText(fakeOrderUiState.date).assertIsDisplayed()
         composeTestRule.onNodeWithText(
