@@ -15,6 +15,7 @@
  */
 package com.example.cupcake
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.annotation.StringRes
@@ -40,6 +41,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavGraph
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -103,11 +105,17 @@ fun CupcakeApp(
         backStackEntry?.destination?.route ?: CupcakeScreen.Start.name
     )
 
+    @SuppressLint("RestrictedApi")
+    val backStack by navController.currentBackStack.collectAsState()
+    val previousBackStackEntry = backStack.asReversed().asSequence().drop(1).firstOrNull { entry ->
+        entry.destination !is NavGraph
+    }
+
     Scaffold(
         topBar = {
             CupcakeAppBar(
                 currentScreen = currentScreen,
-                canNavigateBack = navController.previousBackStackEntry != null,
+                canNavigateBack = previousBackStackEntry != null,
                 navigateUp = { navController.navigateUp() }
             )
         }
